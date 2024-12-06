@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pipe it straight into your shell!</title>
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container min-vh-100 d-flex flex-column justify-content-center align-items-center">
+        <div class="text-center mb-4">
+            <h1 class="display-4 mb-4">dare to pipe?</h1>
+            <p class="text-muted mb-4">unique victims: {{ victim_count }}</p>
+        </div>
+
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <div class="command-container position-relative mb-4">
+            <pre class="bg-dark p-4 rounded-3"><code id="cmd">loading...</code></pre>
+            <button class="btn btn-secondary copy-btn" onclick="copyCommand()">
+                copy
+            </button>
+        </div>
+
+        <div class="mt-4 text-center">
+            <p class="text-muted">
+                <small>⚠️ alert: piping random URLs into bash is always a good idea!</small>
+            </p>
+            <button class="btn btn-secondary copy-btn" style="opacity: 0.3;" onclick="openLink('https://github.com/spinfal/pipeitstraightintoyourshell')">
+                spoil the fun
+            </button>
+        </div>
+    </div>
+
+    <script src="/static/js/copy.js"></script>
+</body>
+</html>

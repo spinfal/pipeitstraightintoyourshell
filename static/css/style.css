@@ -1,0 +1,37 @@
+.command-container {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+}
+
+pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: var(--bs-dark);
+    border: 1px solid var(--bs-gray-700);
+}
+
+code {
+    color: var(--bs-info);
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.copy-btn:hover {
+    opacity: 1;
+}
+
+.copy-btn.copied {
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+}
