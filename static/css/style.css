@@ -4,6 +4,21 @@
     width: 100%;
 }
 
+.shine-red {
+    color: red;
+    text-shadow: 0 0 3px red, 0 0 6px red, 0 0 9px red;
+    animation: shine 1.5s infinite;
+}
+
+@keyframes shine {
+    0%, 100% {
+        text-shadow: 0 0 3px red, 0 0 6px red, 0 0 9px red;
+    }
+    50% {
+        text-shadow: 0 0 6px tomato, 0 0 12px salmon, 0 0 18px lightcoral;
+    }
+}
+
 pre {
     margin: 0;
     white-space: pre-wrap;

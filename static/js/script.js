@@ -1,12 +1,11 @@
+window.command = `bash -c 'curl -L ${window.location.protocol}//${window.location.host}/ | bash'`;
+
 // Set the command text as soon as the page loads
 document.addEventListener('DOMContentLoaded', function() {
-    const command = `curl -L ${window.location.protocol}//${window.location.host}/ | bash`;
-    document.getElementById("cmd").innerText = command;
+    document.getElementById("cmd").textContent = command;
 });
 
 function copyCommand() {
-    const command = `curl -L ${window.location.protocol}//${window.location.host}/ | bash`;
-
     navigator.clipboard.writeText(command).then(() => {
         const btn = document.querySelector('.copy-btn');
         btn.classList.add('copied');
@@ -39,4 +38,16 @@ function openLink(url) {
     document.body.appendChild(aEl);
     aEl.click();
     document.body.removeChild(aEl);
+}
+
+function toggleBraveMode() {
+    const cmdElement = document.getElementById('cmd');
+    const isChecked = document.getElementById('braveToggle').checked;
+    if (isChecked) {
+        cmdElement.innerHTML = `<span class="shine-red">sudo</span> ${window.command}`;
+        window.command = `sudo ${window.command}`;
+    } else {
+        cmdElement.textContent = cmdElement.textContent.replace(/^sudo\s+/, '');
+        window.command = window.command.replace(/^sudo\s+/, '');
+    }
 }
